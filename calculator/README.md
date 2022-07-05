@@ -4,13 +4,5 @@ A new Flutter project.
 
 ## Getting Started
 
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+kalkulator cbd oblicza ilosc olejku do przyjecia na podstawie wzoru: X=waga ciala x 0,7 x stopien dawki =>(1-x1 2-x2,5 3-x3,5).
+aplikacje nalezy powiazac z baza danych, stworzyc system zbierania danych od ankietowanych oraz powiazac aplikacje ze sklepem jak i kalendarzem jak i ,,reminderem" potrzebnym do przypominaniu o terapii. 

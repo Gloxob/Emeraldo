@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
-import 'dart:math';
-import '../widgets/leftBar.dart';
-import '../widgets/rightBar.dart';
+import '/widgets/leftBar.dart';
+import '/widgets/rightBar.dart';
 
 class Home extends StatefulWidget {
+  const Home({Key? key}) : super(key: key);
+
   @override
   _HomeState createState() => _HomeState();
 }
@@ -102,7 +103,7 @@ class _HomeState extends State<Home> {
                         )),
                   ),
                 ),
-                Container(
+                SizedBox(
                   width: 140,
                   child: TextField(
                     controller: _issue,

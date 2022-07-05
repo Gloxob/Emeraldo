@@ -11,7 +11,7 @@ class MyApp extends StatelessWidget {
       title: 'Cbd Calculator',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        primaryColor: Color.fromARGB(255, 17, 165, 4),
+        primaryColor: Color.fromARGB(255, 5, 49, 20),
         accentColor: Color(0xFFfcc91c),
       ),
       home: Home(),
