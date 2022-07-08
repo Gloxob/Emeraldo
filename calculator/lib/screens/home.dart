@@ -1,3 +1,4 @@
+import 'package:dropdown_button2/dropdown_button2.dart';
 import 'package:flutter/material.dart';
 import '/widgets/leftBar.dart';
 import '/widgets/rightBar.dart';
@@ -14,9 +15,17 @@ class _HomeState extends State<Home> {
   TextEditingController _weight = TextEditingController();
   TextEditingController _power = TextEditingController();
   TextEditingController _issue = TextEditingController();
+  String dropdownvalue = 'ADHD';
+  var items = [
+    'ADHD',
+    'Alzheimer',
+    'Nowotwór',
+    'Demencja',
+    'Epilepsja',
+    'Parkinson'
+  ];
   double cbdDose = 0;
   String textResult = "";
-  @override
   Widget build(BuildContext context) {
     return Scaffold(
       resizeToAvoidBottomInset: true,
@@ -103,26 +112,39 @@ class _HomeState extends State<Home> {
                         )),
                   ),
                 ),
-                SizedBox(
-                  width: 140,
-                  child: TextField(
-                    controller: _issue,
-                    style: TextStyle(
-                      fontSize: 32,
-                      fontWeight: FontWeight.w300,
-                      color: Theme.of(context).accentColor,
+                Container(
+                    child: DropdownButtonHideUnderline(
+                  child: DropdownButton2(
+                    hint: Text(
+                      'Dolegliwość',
+                      style: TextStyle(
+                        fontSize: 14,
+                        color: Theme.of(context).hintColor,
+                      ),
                     ),
-                    keyboardType: TextInputType.number,
-                    decoration: InputDecoration(
-                        labelText: "(ustaw 1)",
-                        border: InputBorder.none,
-                        labelStyle: TextStyle(
-                          color: Colors.white.withOpacity(0.8),
-                          fontSize: 30,
-                          fontWeight: FontWeight.w300,
-                        )),
+                    items: items
+                        .map((item) => DropdownMenuItem<String>(
+                              value: item,
+                              child: Text(
+                                item,
+                                style: const TextStyle(
+                                  fontSize: 14,
+                                ),
+                              ),
+                            ))
+                        .toList(),
+                    value: dropdownvalue,
+                    onChanged: (String? newValue) {
+                      setState(() {
+                        dropdownvalue = newValue!;
+                        //if (dropdownvalue == "ADHD") print(dropdownvalue);
+                      });
+                    },
+                    buttonHeight: 40,
+                    buttonWidth: 140,
+                    itemHeight: 40,
                   ),
-                ),
+                )),
               ],
             ),
             SizedBox(height: 20),
@@ -131,7 +153,7 @@ class _HomeState extends State<Home> {
                 double _h = double.parse(_height.text);
                 double _w = double.parse(_weight.text);
                 double _p = double.parse(_power.text);
-                double _i = double.parse(_issue.text);
+
                 setState(() {
                   cbdDose;
                   if (_p == 1) {

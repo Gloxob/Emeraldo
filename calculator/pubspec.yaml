@@ -28,6 +28,7 @@ environment:
 # versions available, run `flutter pub outdated`.
 dependencies:
   smart_select: ^4.3.2
+  dropdown_button2: ^1.6.3
   flutter:
     sdk: flutter
 
